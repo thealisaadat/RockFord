@@ -1,0 +1,338 @@
+﻿@using RockFord.DataLayer.Entities.Site
+@using Microsoft.VisualBasic
+
+ 
+@{
+    var info = ViewBag.siteInfo as SiteInfo;
+}
+
+
+
+
+<!-- start navbar section -->
+<section id="navigation-nav">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-search">
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="navigation-nav">
+                <div class="navigation-nav-item">
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">مقالات</a></li>
+                        <li><a href="#">آموزش ها</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                    </ul>
+                </div>
+                <div class="navigation-item">
+                    <a href="#">خانه</a>
+                    <a href="#">مقالات</a>
+                </div>
+            </div>
+
+            <div class="respansive-navbar">
+                <div class="hamburger-icon">
+                    <div class="ham"></div>
+                </div>
+                <div class="respansive-navbar-item">
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">مقالات</a></li>
+                        <li><a href="#">آموزش</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">تماس باما</a></li>
+                        <li><a href="#">همکاری ما</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<navbar id="navbar">
+    <div class="container">
+        <div class="row space">
+            <div class="sign-logo">
+               @if (User.Identity.IsAuthenticated)
+               {
+                   <div class="sign-logo-name">
+                       <p>@User.Identity.Name</p>
+                       <div class="sign-out">
+                           <a asp-area="User" asp-controller="Account" asp-action="LogOut" >خروج</a>
+                       </div>
+                   </div>
+               }
+               else
+               {
+                   <a asp-area="User" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-user-plus"></i></a>
+               }
+            </div>
+            <div class="navbar">
+                <div class="navbar-item">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                خانه
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                مقالات
+
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                آموزش ها
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                درباره ما
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                تماس با ما
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                همکاری با ما
+                                <div class="soundwave">
+                                    <div class="ffff">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-logo">
+                    <a href="#">
+                        <img src="/img/26710.png" alt="" />
+                        <h2>Carseda</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</navbar>
+<!-- end navbar section -->
+<!-- start header section -->
+<header>
+    <div id="header-video">
+        <section class="header-video">
+            <video loop muted autoplay class="header-video-item">
+                <source src="/video/Helcat 2.mov" />
+            </video>
+            <div class="video-overlay">
+                <p>@info.FirstHeader</p>
+                <h1>@info.SecondHeader</h1>
+                <p>@info.HeaderDescription</p>
+            </div>
+        </section>
+    </div>
+</header>
+<!-- end header section -->

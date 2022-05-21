@@ -1,0 +1,48 @@
+﻿@model RockFord.DataLayer.DTOs.Account.RegisterViewModel
+
+
+
+
+<div class="singup">
+    <div class="singup-title">
+        <a href=""><h1>CarSeda.ir</h1></a>
+    </div>
+    <form class="form" id="form"  asp-area="User" asp-controller="Account" asp-action="_Register" enctype="multipart/form-data">
+        <div class="form-control">
+            <label>نام کاربری</label>
+            <input type="text" id="username"  asp-for="UserName" placeholder="UsrName" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+        </div>
+        <div class="form-control">
+            <label>ایمیل</label>
+            <input type="text" id="email" asp-for="Email" placeholder="Sample@Gmail.com" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+            
+        </div>
+        <div class="form-control">
+            <label>رمز عبور</label>
+            <input type="password" id="password" asp-for="Password" placeholder="Password" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+
+        </div>
+        <div class="form-control">
+            <label>تکرار رمز عبور</label>
+            <input type="password" id="password2" asp-for="RePassword"placeholder="تکرار پسوورد" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+            
+
+        </div>
+
+        <button >ثبت نام</button>
+    </form>
+</div>
+
+  

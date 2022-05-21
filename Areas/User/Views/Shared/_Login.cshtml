@@ -1,0 +1,34 @@
+﻿@model RockFord.DataLayer.DTOs.Account.LoginViewModel
+
+
+
+
+
+
+
+
+<div class="login singrot">
+    <div class="singup-title">
+        <a href=""><h1>CarSeda.ir</h1></a>
+    </div>
+    <form class="form" id="login-form" asp-area="User" asp-controller="Account" asp-action="_Login" enctype="multipart/form-data">
+        <div class="form-control">
+            <label>نام کاربری</label>
+            <input id="login-username" type="text" asp-for="UserName" placeholder="UsrName" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+        </div>
+
+        <div class="form-control">
+            <label>رمز عبور</label>
+            <input id="login-password" type="password" asp-for="Password" placeholder="Password" />
+            <i class="fas fa-check-circle red"></i>
+            <i class="fas fa-exclamation-triangle green"></i>
+            <span>پیام خطا</span>
+        </div>
+
+        <button >ورود</button>
+
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<RockFord.DataLayer.Entities.Contents.Article>
+
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var art in Model)
+    {
+        <div class="main-article-item">
+
+
+            <a asp-controller="Home" asp-action="SinglePage" asp-route-articleId="@art.Id">
+                <div class="main-article-title">
+                    <h3>@art.Header</h3>
+                </div>
+                <div class="main-article-overlay">
+                    <p>@art.Description</p>
+                    <span>دیدن مقاله</span>
+                </div>
+
+                <div class="img-overlay">
+                    <img src="img/1 (1).webp" alt="@art.MainTitle"/>
+                </div>
+            </a>
+
+        </div>
+    }
+}
+
+
+

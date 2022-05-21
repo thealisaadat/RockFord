@@ -1,0 +1,37 @@
+﻿@using RockFord.DataLayer.Entities.Site
+@model List<SiteSlider>
+@section scripts
+{
+    <partial name="_JqueryValidators"/>
+}
+
+<!-- start slider section -->
+@if (Model != null && Model.Any())
+{
+    <section class="slider">
+        <div class="slider-container">
+
+            @foreach (var item in Model)
+            {
+                <div class="slider-one active">
+                    <div class="text-overlay class">
+                        <h3>مطالب مرتبط</h3>
+                    </div>
+                    <div class="overlay-btn">
+                        <a href="#"><span>مشاهده مقاله</span></a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="slider-overlay">
+            <div class="slid-left">
+                <i class="fa-solid fa-angles-left"></i>
+            </div>
+            <div class="slid-right">
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div>
+        <div class="progress"></div>
+    </section>
+}
+<!-- end slider section -->

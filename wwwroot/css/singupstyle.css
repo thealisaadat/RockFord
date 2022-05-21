@@ -1,0 +1,314 @@
+@font-face {
+  font-family: iransans;
+  src: url(../font/irsans_p30download.com.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: iransans;
+}
+body {
+  direction: rtl;
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/bmw.jpg);
+  background-position: center;
+  background-size: center;
+  background-repeat: no-repeat;
+}
+.main {
+  position: relative;
+  width: 300px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px #272727;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.main .singup {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+.singrot {
+  opacity: 0;
+  transform: rotateY(180deg);
+  visibility: hidden;
+}
+.main .login {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+
+.main .change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.main .change .change-singup {
+  height: 100%;
+  width: 48%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.main .change .change-login {
+  height: 100%;
+  width: 48%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.active {
+  background-color: aqua !important;
+  color: #000 !important;
+}
+
+.main .singup-title h1 {
+  color: #fff;
+  font-size: 40px;
+  margin: 15px 0;
+}
+.main .login .singup-title {
+  margin-bottom: 40px;
+}
+.main form {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+form .form-control {
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.form-control label {
+  display: block;
+  text-align: right;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #d8d8d8;
+  display: block;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.form-control.error input {
+  border-color: #f14545;
+}
+
+.form-control.success input {
+  border-color: #43cc5a;
+}
+
+.form-control input::placeholder {
+  color: #b9b9b9;
+}
+
+.form-control svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  visibility: hidden;
+  transform: translateY(-25%);
+}
+
+.form-control .green {
+  color: #43cc5a;
+}
+
+.form-control .red {
+  color: #c00;
+}
+
+.form-control.error .red {
+  visibility: visible;
+}
+.form-control.success .green {
+  visibility: visible;
+}
+
+.form-control span {
+  font-size: 10px;
+  color: #c00;
+  visibility: hidden;
+}
+.form-control.error span {
+  visibility: visible;
+}
+form button {
+  background: aqua;
+  color: #000;
+  padding: 6px 10px;
+  font-size: 18px;
+  border: none;
+  width: 50%;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+  background: rgb(0, 179, 179);
+}
+/* login */
+
+/* .main .login .login-img {
+  width: 150px;
+  height: 150px;
+  margin: 15px 0;
+}
+.main .login .login-img img {
+  width: 150px;
+  height: 150px;
+}
+.main .login form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .login form input {
+  all: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: iransans;
+  padding: 5px 18px;
+  width: 200px;
+  margin: 5px 0;
+  color: #fff;
+}
+.main .login form > span {
+  border-bottom: 1px solid #fff;
+  margin: 5px 0;
+  position: relative;
+}
+.main .login form input::placeholder {
+  color: #fff;
+}
+
+.main .login form span > svg {
+  color: #c00;
+}
+.main .login .btn {
+  padding: 8px 40px;
+  background-color: aqua;
+  color: #000;
+  font-size: 16px;
+  border-radius: 50px;
+  margin: 10px 0;
+}
+
+.main .singup form > span span svg {
+  color: #ffffff;
+  font-size: 11px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+}
+.main .login form > span span svg {
+  color: #ffffff;
+  font-size: 11px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+}
+
+.main .singup form > span .eye-toggle {
+  cursor: pointer;
+}
+.main .login form > span .eye-togle2 {
+  cursor: pointer;
+}
+.eye-close {
+  display: none;
+}
+.hide .eye-close {
+  display: block;
+}
+
+.hide .eye-open2 {
+  display: none;
+}
+.eye-close2 {
+  display: none;
+}
+.hide .eye-close2 {
+  display: block;
+}
+
+.hide .eye-open2 {
+  display: none;
+} */

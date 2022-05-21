@@ -1,0 +1,57 @@
+﻿@using RockFord.DataLayer.Entities.Contents
+@model RockFord.DataLayer.DTOs.Content.ArticleForShowViewModel
+
+@{
+    ViewData["Title"] = @Model.MainTitle;
+}
+
+@section scripts
+{
+    <partial name="_JqueryValidators" />
+}
+
+
+
+<main class="single-main">
+    <div class="container">
+        <div class="single-main">
+            <section id="single-article">
+                <div class="single-article-header">
+                    <div class="article-header-title">
+                        <h1>@Model.Header</h1>
+                    </div>
+                    <div class="article-header-img">
+                        <img src="/images/bmw.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="single-article-item">
+                    <p>@Model.Text</p>
+                </div>
+                <div class="back-link">
+                    <a href="#">#ضبط</a>
+                    <a href="#">#لینک</a>
+                    <a href="#">#بهترین ضبط ها</a>
+                    <a href="#">#بزارهای نصب</a>
+                    <a href="#">#دمپینگ</a>
+                    <a href="#">#پست های محبوب</a>
+                    <a href="#">#آموزش</a>
+                    <a href="#">#نصب</a>
+                    <a href="#">#ضبط</a>
+                    <a href="#">#لینک</a>
+                    <a href="#">#بهترین ضبط ها</a>
+                    <a href="#">#بزارهای نصب</a>
+                    <a href="#">#دمپینگ</a>
+                    <a href="#">#پست های محبوب</a>
+                    <a href="#">#آموزش</a>
+                    <a href="#">#نصب</a>
+                </div>
+                <!-- comment section start -->
+                <partial name="_CommentArea" />
+                <!-- comment section end -->
+            </section>
+            <!-- sidebar section start -->
+            <partial name="_SinglePageSide" />
+            <!-- sidebar section end -->
+        </div>
+    </div>
+</main>

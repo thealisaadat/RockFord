@@ -1,0 +1,33 @@
+﻿@using RockFord.DataLayer.Entities.Site
+
+
+
+@{
+    var info = ViewBag.siteInfo as SiteInfo;
+}
+
+
+
+
+<section style="height:20px;background-color: #fff;"></section>
+<footer>
+    <div class="sociali">
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-twitter-square"></i></span>
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-linkedin-in"></i></span>
+    </div>
+    <section id="news">
+        <div class="news">
+            <div class="Newsletter">
+                <form>
+                    <input type="email" placeholder="ایمیل">
+                </form>
+                <a href="#">عضویت در خبرنامه</a>
+            </div>
+        </div>
+    </section>
+</footer>
+<div class="copy">
+    <p>@info.FooterText</p>
+</div>
