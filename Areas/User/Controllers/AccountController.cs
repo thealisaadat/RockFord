@@ -60,7 +60,7 @@ namespace RockFord.Web.Areas.User.Controllers
                         return Redirect("/home");
                 }
             }
-            return View();
+            return View(register);
         }
 
 
@@ -103,7 +103,7 @@ namespace RockFord.Web.Areas.User.Controllers
                 }
             }
             TempData[ErrorMessage] = "کاربری با این مشخصات یافت نشد";
-            return View(login);
+            return Redirect("/user");
         }
 
         #endregion

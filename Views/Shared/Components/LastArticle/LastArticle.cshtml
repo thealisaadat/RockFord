@@ -1,4 +1,5 @@
 ﻿
+@using RockFord.Application.Utility
 @model IEnumerable<RockFord.DataLayer.Entities.Contents.Article>
 
 
@@ -19,7 +20,7 @@
                 </div>
 
                 <div class="img-overlay">
-                    <img src="img/1 (1).webp" alt="@art.MainTitle"/>
+                    <img src="@(PathExtensions.ArticleThumb + art.ThumbImage)" alt="@art.MainTitle"/>
                 </div>
             </a>
 

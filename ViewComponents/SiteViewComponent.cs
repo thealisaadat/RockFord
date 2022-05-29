@@ -27,6 +27,28 @@ namespace RockFord.Web.ViewComponents
 
     #endregion
 
+    #region Single Page LastArticle
+
+    public class SpLastArticleViewComponent : ViewComponent
+    {
+        private readonly IContentService _service;
+
+        public SpLastArticleViewComponent(IContentService service)
+        {
+            _service = service;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var source = await _service.GetAllArticleByCreateDate();
+            var enumerable = source.Take(3);
+            return View("SpLastArticle", enumerable);
+        }
+
+    }
+
+    #endregion
+
     #region SiteHeader
 
     public class SiteHeaderViewComponent:ViewComponent

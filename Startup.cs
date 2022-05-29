@@ -35,6 +35,7 @@ namespace RockFord.Web
             services.AddScoped<IPasswordHelper, PassHelperService>();
             services.AddScoped<IContentService, ContentService>();
             services.AddScoped<ISiteService, SiteService>();
+            services.AddScoped<ITicketService, TicketService>();
             #region Db_Context
 
             services.AddDbContext<RockFordDbContext>(options =>

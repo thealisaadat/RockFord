@@ -1,0 +1,22 @@
+﻿
+@using RockFord.Application.Utility
+@model IEnumerable<RockFord.DataLayer.Entities.Contents.Article>
+
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var art in Model)
+    {
+        <div class="puplar-post-item">
+            <a asp-controller="Home" asp-action="SinglePage" asp-route-articleId="@art.Id">
+                <img src="@(PathExtensions.ArticleThumb + art.ThumbImage)" alt="@art.Header" />
+                <h5>@art.Header</h5>
+                <p>@art.Description</p>
+            </a>
+        </div>
+       
+    }
+}
+
+
+

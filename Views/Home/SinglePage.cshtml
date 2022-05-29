@@ -1,18 +1,15 @@
 ﻿@using RockFord.DataLayer.Entities.Contents
+@using RockFord.Application.Utility
 @model RockFord.DataLayer.DTOs.Content.ArticleForShowViewModel
 
 @{
     ViewData["Title"] = @Model.MainTitle;
 }
 
-@section scripts
-{
-    <partial name="_JqueryValidators" />
-}
 
 
 
-<main class="single-main">
+<main id="single-main">
     <div class="container">
         <div class="single-main">
             <section id="single-article">
@@ -21,11 +18,11 @@
                         <h1>@Model.Header</h1>
                     </div>
                     <div class="article-header-img">
-                        <img src="/images/bmw.jpg" alt="" />
+                        <img src="@(PathExtensions.ArticleOrigin + Model.ImageName)" alt="@Model.Description" />
                     </div>
                 </div>
                 <div class="single-article-item">
-                    <p>@Model.Text</p>
+                    <p>@Html.Raw(Model.Text)</p>
                 </div>
                 <div class="back-link">
                     <a href="#">#ضبط</a>

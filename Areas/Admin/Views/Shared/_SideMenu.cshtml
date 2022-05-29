@@ -1,15 +1,75 @@
-﻿<aside id="aside" class="">
-    <div class="aside-span"><i class="fa-solid fa-angles-left"></i></div>
-    <section class="sidebar">
-        <ul>
-            <li><a href="">اضافه کردن مقاله</a></li>
-            <li><a href="">اپلود اهنگ</a></li>
-            <li><a href="">ویرایش مقاله</a></li>
-            <li><a href="">پیام ها</a></li>
-            <li><a href="">حساب کاربری</a></li>
-            <li><a href="">سئو</a></li>
-            <li><a href="">کاربران</a></li>
-            <li><a href="">تنظیمات</a></li>
+﻿<ul class="nav sidebar-menu">
+    <!--Dashboard-->
+    <li>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index">
+            <i class="menu-icon glyphicon glyphicon-home"></i>
+            <span class="menu-text"> داشبورد </span>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa fa-desktop"></i>
+            <span class="menu-text">دسته بندی ها </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li>
+                <a asp-area="Admin" asp-controller="Content" asp-action="GroupList">
+                    <span class="menu-text">لیست کلی</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-area="Admin" asp-controller="Content" asp-action="AddMainGroup">
+                    <span class="menu-text">افزودن دسته جدید</span>
+                </a>
+            </li>
         </ul>
-    </section>
-</aside>
+    </li>
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa fa-desktop"></i>
+            <span class="menu-text"> مقالات </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li>
+                <a asp-area="Admin" asp-controller="Content" asp-action="ListArticle">
+                    <span class="menu-text">لیست کلی</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-area="Admin" asp-controller="Content" asp-action="AddArticle">
+                    <span class="menu-text">افزودن مقاله جدید</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa fa-desktop"></i>
+            <span class="menu-text">  کاربران </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li>
+                <a href="#">
+                    <span class="menu-text">لیست کلی</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-text">لیست سیاه</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

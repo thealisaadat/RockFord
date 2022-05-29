@@ -1,0 +1,46 @@
+﻿@model IEnumerable<RockFord.DataLayer.Entities.Contents.MainGroup>
+
+@{
+    ViewData["Title"] = "GroupList";
+}
+
+
+<div class="col-xs-12 ">
+        <div class="well with-header  with-footer">
+            <table class="table table-hover">
+                <thead class="bordered-darkorange">
+                    <tr>
+                        <th>
+                            کد
+                        </th>
+                        <th>
+                            نام
+                        </th>
+                        <th>
+                            تاریخ ایجاد
+                        </th>
+                       
+                </thead>
+                <tbody>
+                   @foreach (var g in Model)
+                   {
+                       <tr>
+                           <td>
+                               @g.Id
+                           </td>
+                           <td>
+                               @g.Title
+                           </td>
+                           <td>
+                               @g.CreateDate
+                           </td>
+                       </tr>
+                   }
+                   
+            </table>
+
+            <div class="footer">
+               
+            </div>
+        </div>
+</div>

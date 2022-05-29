@@ -11,9 +11,7 @@
         <div class="form-control">
             <label>نام کاربری</label>
             <input type="text" id="username"  asp-for="UserName" placeholder="UsrName" />
-            <i class="fas fa-check-circle red"></i>
-            <i class="fas fa-exclamation-triangle green"></i>
-            <span>پیام خطا</span>
+            <span asp-validation-for="UserName"></span>
         </div>
         <div class="form-control">
             <label>ایمیل</label>

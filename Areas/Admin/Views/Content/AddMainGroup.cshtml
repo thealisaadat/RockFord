@@ -1,0 +1,25 @@
+﻿@model RockFord.DataLayer.DTOs.Content.MainGroupViewModel
+
+@{
+    ViewData["Title"] = "دسته بندی جدید";
+}
+
+<div class="col-lg-6 col-sm-6 col-xs-12">
+    <div class="widget">
+        <div class="widget-header bordered-top bordered-palegreen">
+            <span class="widget-caption">دسته بندی جدید</span>
+        </div>
+        <div class="widget-body">
+            <div class="collapse in">
+                <form role="form" asp-area="Admin" asp-controller="Content" asp-action="AddMainGroup" method="post">
+                    <div class="form-group">
+                        <label for="definpu">عنوان</label>
+                        <input type="text" asp-for="Title" class="form-control " id="definpu" placeholder="نام مورد نظر خد را وارد کنید">
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success">ثبت</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

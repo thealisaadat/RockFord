@@ -1,68 +1,56 @@
-﻿@model RockFord.DataLayer.DTOs.Content.ArticleViewModel
-
-<div class="add-article">
-    <div class="article-title">
-        <h1>اضافه کردن مقاله</h1>
-    </div>
-    <div class="article-form">
-        <form asp-area="Admin" asp-controller="Content" asp-action="AddArticle">
+﻿@using RockFord.DataLayer.Entities.Contents
+@using System.Text
+@model RockFord.DataLayer.DTOs.Content.ArticleViewModel
+@{
+    ViewData["Title"] = "افزودن مقاله";
+}
 
 
-            <div>
-
-                <input type="text" asp-for="MainTitle" placeholder="تایتل بالای صفحه" />
-                <span asp-validation-for="MainTitle"></span>
-            </div>
-            
-            <div>
-                <input type="text" asp-for="Header" placeholder="هدر بالای مقاله" />
-                <span asp-validation-for="Header"></span>
-            </div>
-            <div >
-                <input type="text" asp-for="Description" placeholder="توضیحات مقاله" />
-                <span asp-validation-for="Description"></span>
-            </div>
-            <div>
-                <span class="file">
-                    <p>اپلود عکس مقاله</p>
-                    <input type="file" name="image" />
-
-                </span>
-                <span class="file">
-                    <p>اپلود عکس ساید بار</p>
-
-
-                    <input type="file" name="thumb" /> 
-                </span>
-               
-            </div>
-
-            <div class="ckeditor">
-                <textarea asp-for="Text"></textarea>
-            </div>
-            @*<div>
-                <div class="input-form">
-                    <input type="text"   asp-for="BigWord"
-                           id="tag-form"
-                           value=""
-                           placeholder="کلمات کلیدی" />
-                    <span id="tag-btn">یک کلمه کلیدی اضافه کنید و بعد کلید کنترل را فشار دهید</span>
-                    
-                </div>
-                
-                <div class="output-form">
-                    <div id="input-tag">
-                       
+<div class="col-lg-12">
+    <div class="widget">
+        <div class="widget-header bordered-top bordered-palegreen">
+            <span class="widget-caption">افزودن مقاله جدید</span>
+        </div>
+        <div class="widget-body">
+            <div class="collapse in">
+                <form role="form" asp-area="Admin" asp-controller="Content" asp-action="AddArticle" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>عنوان</label>
+                        <input type="text" asp-for="Header" class="form-control " placeholder="عنوان مورد نظر خد را در اینجا بنویسید">
+                        <span asp-validation-for="Header"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="definpu">سر مقاله</label>
+                        <input type="text" asp-for="MainTitle" class="form-control " id="definpu" placeholder="تیتر مورد نظر خد را در اینجا بنویسید">
+                        <span asp-validation-for="MainTitle"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="definpu">مقدمه</label>
+                        <input type="text" asp-for="Description" class="form-control " id="definpu" placeholder="تیتر مقاله را در اینجا بنویسید">
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="definpu">مقاله</label>
+                        <textarea type="text" asp-for="Text" class="form-control" rows="20" id="definpu" ckeditor="1" placeholder="متن مقاله را در اینجا بنویسید"></textarea>
+                        <span asp-validation-for="Text"></span>
+                    </div>
+                    <div class="form-group">
+                        @await Component.InvokeAsync("MainGroup")
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-azure btn-file">
+                                    Browse <input type="file" name="image">
+                                </span>
+                            </span>
+                        </div>
                     </div>
 
-                </div>
-                
-            </div>*@
-            
-            <div>
-                <button type="submit">بارگزاری</button>
-            </div>
-        </form>
+                    <button type="submit" class="btn btn-success">ثبت</button>
+                </form>
 
+            </div>
+        </div>
     </div>
 </div>

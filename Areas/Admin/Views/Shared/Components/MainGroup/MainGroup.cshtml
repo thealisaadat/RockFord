@@ -1,0 +1,5 @@
+﻿@model RockFord.DataLayer.DTOs.Content.ArticleViewModel
+
+<label for="definpu">دسته</label>
+<select type="text" asp-for="MainId" asp-items="@(ViewData["MainGroups"] as SelectList)"  class="form-control" id="definpu" placeholder="دسته مورد نظر را انتخاب کنید"></select>
+<span asp-validation-for="MainId"></span>

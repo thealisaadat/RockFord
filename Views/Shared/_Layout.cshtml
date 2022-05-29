@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CarSeda | @ViewData["Title"]</title>
     <partial name="_Refrences" />
-    <partial name="_JqueryValidators" />
+
 </head>
 <body>
-    
-        @await Component.InvokeAsync("SiteHeader")
-        @RenderBody();
-        @RenderSection("scripts", false)
-        @RenderSection("styles", false)
-        @await Component.InvokeAsync("SiteFooter")
-        <partial name="_SiteMessage" />
-    
+
+    @await Component.InvokeAsync("SiteHeader")
+    @RenderBody();
+
+    @RenderSection("styles", false)
+    @await Component.InvokeAsync("SiteFooter")
+
+    <partial name="_FooterRefrences" />
+    @RenderSection("scripts", false)
+    <partial name="_SiteMessage" />
 </body>
 </html>
