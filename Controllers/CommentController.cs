@@ -2,9 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.CodeAnalysis;
 using RockFord.Application.Services.Interfaces;
 using RockFord.DataLayer.DTOs.Contact;
+using RockFord.DataLayer.DTOs.Content;
+using RockFord.DataLayer.Entities.Contents;
+using RockFord.Web.PresentationExtensions;
 
 namespace RockFord.Web.Controllers
 {
@@ -15,6 +23,7 @@ namespace RockFord.Web.Controllers
 
         private readonly ITicketService _service;
 
+
         public CommentController(ITicketService service)
         {
             _service = service;
@@ -22,12 +31,16 @@ namespace RockFord.Web.Controllers
 
         #endregion
 
-        [HttpGet("{userId},{articleId}")]
-        public async Task<IActionResult> AddNewComment(AddTicketViewModel comment,long userId, long articleId)
+        
+
+
+        [HttpPost,ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewComment(AddTicketViewModel com,long id)
         {
+
             if (ModelState.IsValid)
             {
-                var res = await _service.AddComment(comment, userId, articleId);
+                var res = await _service.AddComment(com ,User.GetUserId(), id);
                 switch (res)
                 {
                     case AddTicketResult.Error:

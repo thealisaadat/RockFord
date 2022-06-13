@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using RockFord.Application.Services.Interfaces;
+using RockFord.DataLayer.DTOs.Content;
 using RockFord.Web.Controllers;
 
 namespace RockFord.Web.Controllers
@@ -26,6 +27,7 @@ namespace RockFord.Web.Controllers
 
         public IActionResult Index()
         {
+            ViewData[SuccessMessage] = "خوش آمدید";
             return View();
         }
 
@@ -34,10 +36,12 @@ namespace RockFord.Web.Controllers
         [HttpGet("SinglePage/{articleId}")]
         public async Task<IActionResult> SinglePage(long articleId)
         {
+           
             var article = await _contentService.GetArticleById(articleId);
             if (article == null) return NotFound();
             return View(article);
         }
+     
 
         #endregion
 

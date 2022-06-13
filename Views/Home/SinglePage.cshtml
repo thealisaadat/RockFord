@@ -4,6 +4,7 @@
 
 @{
     ViewData["Title"] = @Model.MainTitle;
+   
 }
 
 
@@ -43,7 +44,34 @@
                     <a href="#">#نصب</a>
                 </div>
                 <!-- comment section start -->
-                <partial name="_CommentArea" />
+                <div class="comment">
+                    <div class="comment-title">
+                        <i class="fa-solid fa-message"></i>
+                        <h3>نظرات کاربران</h3>
+                    </div>
+                    <div class="comment-singup">
+                        <span>
+                            جهت ثبت نظر باید در سایت
+                            <a href="#">عضوشوید </a>
+                            و یا
+                            <a href="#"> وارد سایت</a>
+                            شده باشید
+                        </span>
+                    </div>
+                    <div class="comment-desc">
+                        <h4>نظر خود را وارد کنید!</h4>
+                        <form asp-controller="Comment" asp-action="NewComment" asp-route-id="@Model.Id"  method="post">
+                            <div>
+                                <textarea asp-for="Comment" placeholder="لطفا نظر خود را وارد کنید"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success">ثبت</button>
+                            </div>
+                        </form>
+                    </div>
+                    @await Component.InvokeAsync("Comment")
+                </div>
+               
                 <!-- comment section end -->
             </section>
             <!-- sidebar section start -->

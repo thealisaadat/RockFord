@@ -1,0 +1,32 @@
+﻿@model RockFord.DataLayer.DTOs.Content.ArticleForShowViewModel
+
+   @if (Model.Comments != null && Model.Comments.Any())
+   {
+       foreach (var comment in Model.Comments)
+       {
+           <div class="comment-member">
+               <div class="comment-member-item">
+                   <div class="comment-item-img">
+                       <img src="/images/Hidden Prof Medium.jpg" alt="" />
+                   </div>
+                   <div class="comment-header">
+                       <p>@comment.UserName</p>
+                       <p>@comment.CreateDate</p>
+                       <span>
+                           <a href="#">پاسخ</a>
+                           <a href="#">گزارش</a>
+                       </span>
+                   </div>
+                   <div class="comment-member-text">
+                       <p>
+                           @comment.ShowText
+                       </p>
+                   </div>
+               </div>
+               <div class="more-comment">
+                   <p>بیشتر</p>
+               </div>
+           </div>
+
+       }
+   }

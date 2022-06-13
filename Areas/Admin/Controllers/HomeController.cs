@@ -11,6 +11,7 @@ namespace RockFord.Web.Areas.Admin.Controllers
         
         public IActionResult Index()
         {
+            ViewData[InfoMessage] = "خوش آمدید";
             return View();
         }
     }

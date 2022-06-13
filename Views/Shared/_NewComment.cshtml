@@ -1,11 +1,5 @@
 ﻿@using RockFord.DataLayer.Entities.Contents
+@using System.Net
+@using System.Xml.Schema
 @model RockFord.DataLayer.DTOs.Content.ArticleForShowViewModel
-
-<form asp-controller="Comment" asp-action="AddNewComment" asp-route-articleId="@Model.Id" asp-route-userId="@Model.UserId" method="post">
-    <div>
-         <textarea asp-for="Comment" placeholder="لطفا نظر خود را وارد کنید"></textarea>
-    </div>
-    <div>
-        <button type="submit" class="btn btn-success"></button>
-    </div>
-</form>
+@{var articleId = ViewContext.RouteData.Values[Model.Id.ToString()]?.ToString();}

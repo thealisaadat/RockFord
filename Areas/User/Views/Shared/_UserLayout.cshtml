@@ -7,33 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/all.min.css" />
     <link rel="stylesheet" href="/css/singupstyle.css" />
+    <link href="/css/notifications.css" rel="stylesheet" />
     <title>SignUp/SignIn</title>
-    
+
 </head>
 <body>
-<div id="main">
-    <section class="main">
-        <div class="change">
-            <div class="change-singup active">
-                <p>ثبت نام</p>
+    <div id="main">
+        <section class="main">
+            <div class="change">
+                <div class="change-singup active">
+                    <p>ثبت نام</p>
+                </div>
+                <div class="change-login">
+                    <p>ورود</p>
+                </div>
             </div>
-            <div class="change-login">
-                <p>ورود</p>
-            </div>
-        </div>
 
 
-        @RenderBody()
+            @RenderBody()
 
 
-    </section>
-       
-</div>
+        </section>
 
+    </div>
+<partial name="_UserFooterRefrences"/>
+@RenderSection("scripts",false)
+<partial name="_SiteMessage"/>
 </body>
 
 </html>
-<script src="/js/all.min.js"></script>
-<script src="/js/sing.js"></script>
-<script src="/js/notifications.js"></script>
+
 
